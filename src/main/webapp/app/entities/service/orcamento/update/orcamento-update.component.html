@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-orcamento-heading"
+        data-cy="OrcamentoCreateUpdateHeading"
+        jhiTranslate="serviceApp.serviceOrcamento.home.createOrEditLabel"
+      >
+        Criar ou editar Orcamento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="serviceApp.serviceOrcamento.ano" for="field_ano">Ano</label>
+          <input type="number" class="form-control" name="ano" id="field_ano" data-cy="ano" formControlName="ano" />
+          @if (editForm.get('ano')!.invalid && (editForm.get('ano')!.dirty || editForm.get('ano')!.touched)) {
+            <div>
+              @if (editForm.get('ano')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!editForm.get('ano')?.errors?.number" jhiTranslate="entity.validation.number"
+                >Este campo é do tipo numérico.</small
+              >
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="serviceApp.serviceOrcamento.mes" for="field_mes">Mes</label>
+          <input type="text" class="form-control" name="mes" id="field_mes" data-cy="mes" formControlName="mes" />
+          @if (editForm.get('mes')!.invalid && (editForm.get('mes')!.dirty || editForm.get('mes')!.touched)) {
+            <div>
+              @if (editForm.get('mes')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salvar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

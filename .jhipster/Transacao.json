@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20231220030112"
+  },
+  "clientRootFolder": "service",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "entityTableName": "transacao",
+  "fields": [
+    {
+      "fieldName": "valor",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "service",
+  "name": "Transacao",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "orcamento",
+      "otherEntityRelationshipName": "transacao",
+      "relationshipName": "orcamento",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "categoria",
+      "otherEntityRelationshipName": "transacao",
+      "relationshipName": "categoria",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

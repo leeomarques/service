@@ -1,0 +1,26 @@
+{
+  "serviceApp": {
+    "serviceTransacao": {
+      "home": {
+        "title": "Transacaos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Transacao",
+        "createOrEditLabel": "Criar ou editar Transacao",
+        "notFound": "Nenhum Transacao encontrado"
+      },
+      "created": "Um novo Transacao foi criado com o identificador {{ param }}",
+      "updated": "Um Transacao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Transacao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Transacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Transacao"
+      },
+      "id": "ID",
+      "valor": "Valor",
+      "orcamento": "Orcamento",
+      "categoria": "Categoria"
+    }
+  }
+}

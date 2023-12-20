@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (transacao) {
+      <div>
+        <h2 data-cy="transacaoDetailsHeading"><span jhiTranslate="serviceApp.serviceTransacao.detail.title">Transacao</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">Código</span></dt>
+          <dd>
+            <span>{{ transacao.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="serviceApp.serviceTransacao.valor">Valor</span></dt>
+          <dd>
+            <span>{{ transacao.valor }}</span>
+          </dd>
+          <dt><span jhiTranslate="serviceApp.serviceTransacao.orcamento">Orcamento</span></dt>
+          <dd>
+            @if (transacao.orcamento) {
+              <div>
+                <a [routerLink]="['/orcamento', transacao.orcamento.id, 'view']">{{ transacao.orcamento.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="serviceApp.serviceTransacao.categoria">Categoria</span></dt>
+          <dd>
+            @if (transacao.categoria) {
+              <div>
+                <a [routerLink]="['/categoria', transacao.categoria.id, 'view']">{{ transacao.categoria.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+        </button>
+
+        <button type="button" [routerLink]="['/service/transacao', transacao.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

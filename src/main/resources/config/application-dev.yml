@@ -55,12 +55,14 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/service
-    username: service
-    password:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
     hikari:
       poolName: Hikari
       auto-commit: false
+  jpa:
+    show-sql: true
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker

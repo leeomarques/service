@@ -75,7 +75,7 @@ management:
           - liquibase
   endpoint:
     health:
-      show-details: when_authorized
+      show-details: when-authorized
       roles: 'ROLE_ADMIN'
       probes:
         enabled: true
@@ -142,7 +142,7 @@ spring:
   jpa:
     open-in-view: false
     properties:
-      hibernate.jdbc.time_zone: UTC
+      hibernate.jdbc.time_zone: America/Sao_Paulo
       hibernate.timezone.default_storage: NORMALIZE
       hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
       hibernate.id.new_generator_mappings: true
@@ -189,11 +189,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/jhipster
+            issuer-uri: http://localhost:8080/realms/appweb
         registration:
           oidc:
-            client-id: internal
-            client-secret: internal
+            client-id: appjhipster810
+            client-secret: nH9maixoFz1QDLX3mJa3kXfj6KeJkgQi
             scope: openid, profile, email, offline_access # last one for refresh tokens
 
 server:

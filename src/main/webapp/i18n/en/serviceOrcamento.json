@@ -1,0 +1,26 @@
+{
+  "serviceApp": {
+    "serviceOrcamento": {
+      "home": {
+        "title": "Orcamentos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Orcamento",
+        "createOrEditLabel": "Create or edit a Orcamento",
+        "notFound": "No Orcamentos found"
+      },
+      "created": "A new Orcamento is created with identifier {{ param }}",
+      "updated": "A Orcamento is updated with identifier {{ param }}",
+      "deleted": "A Orcamento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Orcamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Orcamento"
+      },
+      "id": "ID",
+      "ano": "Ano",
+      "mes": "Mes",
+      "transacao": "Transacao"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "serviceApp": {
+    "serviceOrcamento": {
+      "home": {
+        "title": "Orcamentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Orcamento",
+        "createOrEditLabel": "Criar ou editar Orcamento",
+        "notFound": "Nenhum Orcamento encontrado"
+      },
+      "created": "Um novo Orcamento foi criado com o identificador {{ param }}",
+      "updated": "Um Orcamento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Orcamento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Orcamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Orcamento"
+      },
+      "id": "ID",
+      "ano": "Ano",
+      "mes": "Mes",
+      "transacao": "Transacao"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20231215044723"
+  },
+  "clientRootFolder": "service",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "entityTableName": "categoria",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "service",
+  "name": "Categoria",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

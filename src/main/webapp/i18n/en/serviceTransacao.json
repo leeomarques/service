@@ -1,0 +1,26 @@
+{
+  "serviceApp": {
+    "serviceTransacao": {
+      "home": {
+        "title": "Transacaos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Transacao",
+        "createOrEditLabel": "Create or edit a Transacao",
+        "notFound": "No Transacaos found"
+      },
+      "created": "A new Transacao is created with identifier {{ param }}",
+      "updated": "A Transacao is updated with identifier {{ param }}",
+      "deleted": "A Transacao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Transacao"
+      },
+      "id": "ID",
+      "valor": "Valor",
+      "orcamento": "Orcamento",
+      "categoria": "Categoria"
+    }
+  }
+}

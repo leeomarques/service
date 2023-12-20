@@ -9,27 +9,25 @@
 # ===================================================================
 
 spring:
+  profiles:
+    include:
+      - no-liquibase
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      auto-commit: false
-      poolName: Hikari
-      maximum-pool-size: 1
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:postgres
+    name:
+    username:
+    password:
+  jackson:
+    serialization:
+      write-durations-as-timestamps: false
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
     open-in-view: false
+    show-sql: true
     hibernate:
-      ddl-auto: none
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
-        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-    properties:
-      hibernate.id.new_generator_mappings: true
-      hibernate.connection.provider_disables_autocommit: true
-      hibernate.cache.use_second_level_cache: false
-      hibernate.cache.use_query_cache: false
-      hibernate.generate_statistics: false
-      hibernate.hbm2ddl.auto: none #TODO: temp relief for integration tests, revisit required
-      hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
-      hibernate.jdbc.time_zone: UTC
-      hibernate.timezone.default_storage: NORMALIZE
-      hibernate.query.fail_on_pagination_over_collection_fetch: true
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
